@@ -193,7 +193,7 @@ const ContactSection = () => {
                 </svg>
               </div>
               <h4 className="text-xl font-bold text-green-800 dark:text-green-400 mb-2">Message Sent!</h4>
-              <p className="text-green-700 dark:text-green-500">Thank you for your message. I'll get back to you as soon as possible.</p>
+              <p className="text-green-700 dark:text-green-500">Thank you for your message. I&apos;ll get back to you as soon as possible.</p>
             </motion.div>
           )}
         </motion.div>
@@ -240,10 +240,9 @@ const ContactSection = () => {
               <div className="mt-1 mr-4 p-3 rounded-full bg-[#0055FF]/10 dark:bg-[#3d7eff]/20 text-[#0055FF] dark:text-[#3d7eff]">
                 <FaLinkedin className="text-xl" />
               </div>
-              <div>
-                <h4 className="text-lg font-semibold mb-1">LinkedIn</h4>
-                <a href="https://linkedin.com/in/mohit-chaudhari-marketing" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
-                  linkedin.com/in/mohit-chaudhari-marketing
+              <div>                <h4 className="text-lg font-semibold mb-1">LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/mohit-chaudhari-b72567175" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
+                  linkedin.com/in/mohit-chaudhari-b72567175
                 </a>
               </div>
             </div>

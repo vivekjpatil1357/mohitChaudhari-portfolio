@@ -178,11 +178,24 @@ const Navbar = () => {
                   variants={navLinkHoverVariants}
                 />
               </Link>
-            </motion.div>
-          ))}
+            </motion.div>          ))}
           
           <motion.div
             custom={navItems.length}
+            variants={navItemVariants}
+          >
+            <a 
+              href="/files/MohitChaudhariCV.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#0055FF] to-[#0044CC] hover:from-[#0044CC] hover:to-[#003BB3] dark:from-[#3d7eff] dark:to-[#2d6ef0] dark:hover:from-[#2d6ef0] dark:hover:to-[#1d5fe1] rounded-full shadow-md hover:shadow-lg transition-all"
+            >
+              Download CV
+            </a>
+          </motion.div>
+          
+          <motion.div
+            custom={navItems.length + 1}
             variants={navItemVariants}
           >
             <ThemeSwitcher />
@@ -234,10 +247,23 @@ const Navbar = () => {
                       }
                     }}
                   >
-                    {item.name}
-                  </Link>
+                    {item.name}                  </Link>
                 </motion.div>
               ))}
+              
+              <motion.div
+                custom={navItems.length}
+                variants={navItemVariants}
+              >
+                <a 
+                  href="/files/MohitChaudhariCV.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#0055FF] to-[#0044CC] hover:from-[#0044CC] hover:to-[#003BB3] dark:from-[#3d7eff] dark:to-[#2d6ef0] dark:hover:from-[#2d6ef0] dark:hover:to-[#1d5fe1] rounded-full shadow-md hover:shadow-lg transition-all"
+                >
+                  Download CV
+                </a>
+              </motion.div>
             </div>
           </motion.div>
         )}

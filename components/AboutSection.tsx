@@ -1,9 +1,7 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaChartBar, FaSearchDollar, FaGlobe, FaBullhorn } from 'react-icons/fa';
-import Image from 'next/image';
-import { useRef } from 'react';
 
 const skills = [
   { name: "Marketing Analytics", icon: <FaChartBar className="text-3xl text-[#0055FF] dark:text-[#3d7eff]" />, description: "Analyzing campaign performance metrics, consumer behavior, and market trends to drive data-driven marketing decisions" },
@@ -48,17 +46,15 @@ const AboutSection = () => {
         <motion.div variants={itemVariants}>
           <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gradient inline-block">My Journey</h3>
         </motion.div>
-          <motion.div variants={itemVariants} className="space-y-5 text-gray-700 dark:text-gray-300">
-          <p>
-            I'm Mohit Chaudhari, a passionate Marketing Analytics Professional with expertise in digital marketing and data-driven market research. 
-            I've worked with <span className="font-semibold text-[#0055FF] dark:text-[#3d7eff]">Outlier AI</span> as a Marketing Analytics AI Trainer and interned at <span className="font-semibold text-[#0055FF] dark:text-[#3d7eff]">TVS Motors</span> in marketing.
+          <motion.div variants={itemVariants} className="space-y-5 text-gray-700 dark:text-gray-300">          <p>
+            I&apos;m Mohit Chaudhari, a passionate Marketing Analytics Professional with expertise in digital marketing and data-driven market research. 
+            I&apos;ve worked with <span className="font-semibold text-[#0055FF] dark:text-[#3d7eff]">Outlier AI</span> as a Marketing Analytics AI Trainer and interned at <span className="font-semibold text-[#0055FF] dark:text-[#3d7eff]">TVS Motors</span> in marketing.
           </p>
           <p>
             With an MBA in Marketing from MIT World Peace University, I enjoy analyzing consumer behavior and optimizing marketing campaigns. 
             My experience spans various domains including AI-driven analytics, digital marketing, and market research.
-          </p>
-          <p>
-            When I'm not analyzing data, you can find me playing cricket, exploring new marketing technologies, 
+          </p>          <p>
+            When I&apos;m not analyzing data, you can find me playing cricket, exploring new marketing technologies, 
             or applying my hospitality background from my time at ITC Fortune Exotica to create exceptional customer experiences.
           </p>
         </motion.div>

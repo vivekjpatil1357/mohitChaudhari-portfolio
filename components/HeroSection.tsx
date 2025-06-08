@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { Button } from './ui/Button';
 import { FaArrowDown, FaGithub, FaLinkedin } from 'react-icons/fa';
 import Lottie from 'lottie-react';
@@ -60,10 +59,8 @@ const HeroSection = () => {
                 </h5>
               </div>
             </motion.div>
-            
-            <motion.div variants={item} className="mb-6">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6">
-                Hi, I'm <span className="text-gradient bg-gradient-to-r from-[#0055FF] to-[#95F1D5] dark:from-[#3d7eff] dark:to-[#95F1D5] bg-clip-text text-transparent">Mohit</span>
+              <motion.div variants={item} className="mb-6">              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6">
+                Hi, I&apos;m <span className="text-gradient bg-gradient-to-r from-[#0055FF] to-[#95F1D5] dark:from-[#3d7eff] dark:to-[#95F1D5] bg-clip-text text-transparent">Mohit</span>
               </h1>
             </motion.div>
 
@@ -99,9 +96,8 @@ const HeroSection = () => {
                 aria-label="Portfolio"
               >
                 <FaGithub />
-              </a>
-              <a 
-                href="https://linkedin.com/in/mohit-chaudhari-marketing" 
+              </a>              <a 
+                href="https://www.linkedin.com/in/mohit-chaudhari-b72567175" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-[#0055FF] dark:text-gray-400 dark:hover:text-[#3d7eff] transition-colors hover-lift"

@@ -1,13 +1,14 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';
-import { Button } from './ui/Button';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { useRef } from 'react';
+import { FaGithub, FaExternalLinkAlt, FaChartBar } from 'react-icons/fa';
+import { useRef, useState } from 'react';
 import Lottie from 'lottie-react';
-import digitalMarketingAnimation from '../public/lottie/digital-marketing.json';
-
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import marketAnalysisAnimation from '../public/lottie/market-analysis.json';
+// import TVSMarketingDashboard from './TVSMarketingDashboard';
+import TestDashboard from './TestDashboard';
 interface Project {
   title: string;
   description: string;
@@ -25,34 +26,26 @@ const projectsData: Project[] = [
     image: "/projects/ev-dashboard.svg",
     useLottie: true,
     technologies: ["Market Research", "SWOT Analysis", "Financial Analysis", "Strategic Recommendations"],
-    demoLink: "#"
+    demoLink: "https://drive.google.com/drive/folders/1BkE4KiVMH3U-ctreLQ61ra78LsZpHb_P"
   },
   {
     title: "TVS Digital Marketing Campaign",
-    description: "Development and execution of digital marketing campaigns for TVS Motors, resulting in a 15% increase in online engagement and improved product positioning.",
-    image: "/projects/connected-vehicle.svg",
+    description: "Development and execution of digital marketing campaigns for TVS Motors, resulting in a 15% increase in online engagement and improved product positioning.",    image: "/projects/connected-vehicle.svg",
     useLottie: true,
     technologies: ["Digital Marketing", "Campaign Analysis", "Market Research", "Performance Metrics"],
-    demoLink: "#"
-  },
-  {
-    title: "AI-Driven Marketing Analytics",
-    description: "Training AI models to enhance understanding of marketing analytics, improving accuracy, relevance, and engagement of AI-generated marketing insights.",
-    image: "/projects/portfolio.svg",
-    useLottie: true,
-    technologies: ["AI Training", "Marketing Analytics", "Data Analysis", "Content Development"],
-    codeLink: "#"
+    demoLink: "https://drive.google.com/drive/folders/1BZEf55v8bOMPg0yHND3yvRM0-U13myRd"
   }
 ];
 
 const ProjectsSection = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+  const [showTVSDashboard, setShowTVSDashboard] = useState(true); // Keep state name for now
+  
+  // We're not using scrollYProgress, so we don't need to destructure it
+  useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
-  
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -76,26 +69,6 @@ const ProjectsSection = () => {
       }
     },
   };
-
-  const hoverVariants = {
-    rest: { 
-      scale: 1, 
-      y: 0,
-      transition: { 
-        duration: 0.4, 
-        ease: [0.42, 0, 0.58, 1] 
-      }
-    },
-    hover: { 
-      scale: 1.03, 
-      y: -10,
-      transition: { 
-        duration: 0.4, 
-        ease: [0.42, 0, 0.58, 1] 
-      }
-    }
-  };
-
   const imageVariants = {
     rest: { 
       scale: 1,
@@ -127,12 +100,11 @@ const ProjectsSection = () => {
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {projectsData.map((project, index) => (
-          <motion.div
+        {projectsData.map((project, index) => (          <motion.div
             key={index}
             variants={itemVariants}
             custom={index}
-            className="bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
+            className="group bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 card-hover"
             whileHover="hover"
             initial="rest"
             animate="rest"
@@ -142,13 +114,28 @@ const ProjectsSection = () => {
                 <motion.div 
                   className="h-full w-full flex items-center justify-center bg-gradient-to-r from-[#0055FF]/5 to-[#95F1D5]/5"
                   variants={imageVariants}
-                >
-                  <div className="h-full w-full max-w-xs mx-auto">
-                    <Lottie 
-                      animationData={digitalMarketingAnimation} 
-                      loop={true} 
-                      className="w-full h-full"
-                    />
+                >                  <div className="h-full w-full max-w-xs mx-auto">
+                    {project.title === "FMCG Industry Analysis" ? (
+                      <DotLottieReact 
+                        src="https://lottie.host/961d2918-e025-4630-8a84-105b933ae64d/K7J3YdoJqd.lottie"
+                        loop
+                        autoplay
+                        className="w-full h-full"
+                      />
+                    ) : project.title === "TVS Digital Marketing Campaign" ? (
+                      <DotLottieReact 
+                        src="https://lottie.host/50d09ec1-1d1e-4fd6-b450-c84313586ff9/5bdgai7tVP.lottie"
+                        loop
+                        autoplay
+                        className="w-full h-full"
+                      />
+                    ) : (
+                      <Lottie 
+                        animationData={marketAnalysisAnimation}
+                        loop={true} 
+                        className="w-full h-full"
+                      />
+                    )}
                   </div>
                 </motion.div>
               ) : (
@@ -163,16 +150,22 @@ const ProjectsSection = () => {
                     className="object-cover"
                   />
                 </motion.div>
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
-                <div className="flex gap-4">
-                  {project.demoLink && (
+              )}              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
+                <div className="flex gap-4">                  {project.title === "TVS Digital Marketing Campaign" && (
+                    <a 
+                      href="#tvs-analytics"
+                      className="text-white bg-gradient-to-r from-[#0055FF] to-[#0044CC] hover:from-[#0044CC] hover:to-[#003BB3] p-3 rounded-full transition-colors shadow-lg"
+                      aria-label="View Analytics Dashboard"
+                    >
+                      <FaChartBar />
+                    </a>
+                  )}                  {project.demoLink && (
                     <a
                       href={project.demoLink}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer" 
                       className="text-white bg-gradient-to-r from-[#0055FF] to-[#0044CC] hover:from-[#0044CC] hover:to-[#003BB3] p-3 rounded-full transition-colors shadow-lg"
-                      aria-label="View Demo"
+                      aria-label="View More Details"
                     >
                       <FaExternalLinkAlt />
                     </a>
@@ -191,8 +184,7 @@ const ProjectsSection = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="p-6">
+              <div className="p-6">
               <h3 className="text-2xl font-bold mb-3 text-gradient bg-gradient-to-r from-[#0055FF] to-[#95F1D5] dark:from-[#3d7eff] dark:to-[#95F1D5] bg-clip-text text-transparent">{project.title}</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
               
@@ -206,10 +198,34 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
+              
+              {project.demoLink && (
+                <div className="mt-6">
+                  <a 
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0055FF] to-[#0044CC] hover:from-[#0044CC] hover:to-[#003BB3] text-white px-4 py-2 rounded-lg transition-colors shadow-md"
+                  >
+                    <FaExternalLinkAlt size={12} />
+                    <span>More Details</span>
+                  </a>
+                </div>
+              )}
             </div>
-          </motion.div>
-        ))}
-      </div>
+          </motion.div>        ))}
+      </div>      {/* TVS Marketing Dashboard section */}
+      {showTVSDashboard && (
+        <div id="tvs-analytics" className="mt-16">
+          <motion.h3 
+            className="text-3xl text-center font-bold mb-8"
+            variants={itemVariants}
+          >
+            TVS Motors Campaign Analytics
+          </motion.h3>
+          <TestDashboard /> {/* Re-add this component */}
+        </div>
+      )}
     </motion.div>
   );
 };

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -21,13 +21,16 @@ export const metadata: Metadata = {
   keywords: ["marketing analytics", "digital marketing", "market research", "TVS Motors", "Outlier AI", "data-driven marketing", "MBA", "portfolio"],
   authors: [{ name: "Mohit Chaudhari" }],
   creator: "Mohit Chaudhari",
+  icons: {
+    icon: '/favicon.svg',
+  },
+};
+
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
   ],
-  icons: {
-    icon: '/favicon.svg',
-  },
 };
 
 export default function RootLayout({

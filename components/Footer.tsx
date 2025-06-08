@@ -93,16 +93,15 @@ const Footer = () => {
               Contact
             </Link>
           </motion.div>
-          
-          <motion.div variants={itemVariants} className="flex gap-6 mb-12">            <a 
-              href="https://linkedin.com/in/mohit-chaudhari-marketing" 
+            <motion.div variants={itemVariants} className="flex gap-6 mb-12">            <a 
+              href="https://www.linkedin.com/in/mohit-chaudhari-b72567175" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="p-3 rounded-full bg-[#0055FF]/10 dark:bg-[#3d7eff]/20 text-[#0055FF] dark:text-[#3d7eff] hover-lift"
               aria-label="LinkedIn"
             >
               <FaLinkedin size={20} />
-            </a>            <a 
+            </a><a 
               href="https://mohitchaudhari-portfolio.com" 
               target="_blank" 
               rel="noopener noreferrer" 
