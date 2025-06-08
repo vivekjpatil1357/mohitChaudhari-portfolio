@@ -253,8 +253,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-1">Portfolio</h4>
-                <a href="https://mohitchaudhari-portfolio.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
-                  mohitchaudhari-portfolio.com
+                <a href="https://mohit-chaudhari-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
+                  mohit-chaudhari-portfolio.vercel.app
                 </a>
               </div>
             </div>

@@ -89,7 +89,7 @@ const HeroSection = () => {
 
             <motion.div variants={item} className="flex gap-6 text-2xl justify-center lg:justify-start">
               <a 
-                href="https://mohitchaudhari-portfolio.com" 
+                href="https://mohit-chaudhari-portfolio.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-[#0055FF] dark:text-gray-400 dark:hover:text-[#3d7eff] transition-colors hover-lift"
