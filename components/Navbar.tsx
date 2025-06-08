@@ -193,21 +193,22 @@ const Navbar = () => {
               Download CV
             </a>
           </motion.div>
-          
-          <motion.div
+            <motion.div
             custom={navItems.length + 1}
             variants={navItemVariants}
+            className="flex items-center ml-2"
           >
             <ThemeSwitcher />
           </motion.div>
         </nav>
-        
-        <div className="md:hidden flex items-center">
-          <ThemeSwitcher />
+          <div className="md:hidden flex items-center">
+          <div className="mr-3">
+            <ThemeSwitcher hideTooltip={true} />
+          </div>
           
           <button
             onClick={toggleMobileMenu}
-            className="ml-4 p-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-[#0055FF] dark:hover:text-[#3d7eff] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="p-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-[#0055FF] dark:hover:text-[#3d7eff] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}

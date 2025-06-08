@@ -5,8 +5,44 @@ import { Button } from './ui/Button';
 import { FaArrowDown, FaGithub, FaLinkedin } from 'react-icons/fa';
 import Lottie from 'lottie-react';
 import marketingAnalyticsAnimation from '../public/lottie/marketing-analytics.json';
+import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      setIsDarkMode(true);
+    } else {
+      setIsDarkMode(false);
+    }
+    
+    // Listen for theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === 'attributes' &&
+          mutation.attributeName === 'class'
+        ) {
+          const isDark = document.documentElement.classList.contains('dark');
+          setIsDarkMode(isDark);
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -51,12 +87,13 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="flex-1 order-2 lg:order-1">
-            <motion.div variants={item} className="mb-6">
+          <motion.div className="flex-1 order-2 lg:order-1">            <motion.div variants={item} className="mb-6">
               <div className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#0055FF]/10 to-[#95F1D5]/30 dark:from-[#3d7eff]/20 dark:to-[#95F1D5]/20 backdrop-blur-sm mb-4 shadow-sm">
                 <h5 className="text-sm md:text-base font-semibold text-[#0055FF] dark:text-[#3d7eff] tracking-wider">
                   MARKETING ANALYTICS PROFESSIONAL
                 </h5>
+              </div>              <div className="absolute top-4 right-4 text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full px-3 py-1 font-medium shadow-sm hidden sm:block">
+                {mounted ? (isDarkMode ? '🌙 Dark Mode' : '☀️ Light Mode') : ''}
               </div>
             </motion.div>
               <motion.div variants={item} className="mb-6">              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6">

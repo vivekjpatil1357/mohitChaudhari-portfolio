@@ -49,6 +49,14 @@ body {
   opacity: 0;
 }
 
+.theme-transition,
+.theme-transition *,
+.theme-transition *:before,
+.theme-transition *:after {
+  transition: all 0.3s ease-out !important;
+  transition-delay: 0 !important;
+}
+
 /* Modern card and hover effects */
 .card-hover {
   transition: transform 0.4s var(--transition-bezier), box-shadow 0.4s var(--transition-bezier);

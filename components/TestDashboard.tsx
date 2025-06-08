@@ -310,12 +310,12 @@ export default function TestDashboard() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="bg-white dark:bg-gray-900 rounded-xl p-5 shadow-md border border-gray-100 dark:border-gray-700 mb-6"
         >
-          <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">TVS Motors Sales Trend (H1 2025)</h3>
+          <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">TVS Motors Sales Trend (H1 2022)</h3>
           <div className="h-72">
             <Line data={salesTrendData} options={lineOptions} />
           </div>
           <div className="mt-4 text-sm text-center text-gray-600 dark:text-gray-300">
-            <p>Interpretation – The first half of 2025 shows consistent growth in TVS Motors sales with a peak in June</p>
+            <p>Interpretation – The first half of 2022 shows consistent growth in TVS Motors sales with a peak in June</p>
           </div>
         </motion.div>
 
@@ -398,7 +398,7 @@ export default function TestDashboard() {
         {/* Bottom section */}
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
-            Based on a comprehensive market research study conducted for TVS Motors from 2023-2024
+            Based on a comprehensive market research study conducted for TVS Motors from  May 2022 to Aug 2022
           </p>
           
         </div>      </div>
