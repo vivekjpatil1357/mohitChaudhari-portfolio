@@ -1,0 +1,11 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f0f0f0"/>
+  <text x="200" y="150" font-family="Arial" font-size="24" text-anchor="middle" fill="#666">Connected Vehicle Platform</text>
+  <g fill="none" stroke="#999">
+    <rect x="50" y="80" width="300" height="140" rx="5" stroke-width="2"/>
+    <path d="M150,200 L200,150 L250,200" stroke-width="2"/>
+    <path d="M100,180 L150,180" stroke-width="2"/>
+    <path d="M250,180 L300,180" stroke-width="2"/>
+    <rect x="170" y="100" width="60" height="30" rx="5" stroke-width="2"/>
+  </g>
+</svg>
