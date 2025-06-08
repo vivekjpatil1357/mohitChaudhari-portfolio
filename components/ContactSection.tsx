@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaArrowRight, FaPhone } from 'react-icons/fa';
 import { Button } from './ui/Button';
 import { useState, useRef } from 'react';
 import Lottie from 'lottie-react';
@@ -201,7 +201,8 @@ const ContactSection = () => {
         <motion.div variants={itemVariants} className="order-1 md:order-2">
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-gradient inline-block">Contact Information</h3>
           
-          <div className="space-y-6">            <div className="flex items-start">
+          <div className="space-y-6 mb-8">
+            <div className="flex items-start">
               <div className="mt-1 mr-4 p-3 rounded-full bg-[#0055FF]/10 dark:bg-[#3d7eff]/20 text-[#0055FF] dark:text-[#3d7eff]">
                 <FaMapMarkerAlt className="text-xl" />
               </div>
@@ -213,8 +214,21 @@ const ContactSection = () => {
             
             <div className="flex items-start">
               <div className="mt-1 mr-4 p-3 rounded-full bg-[#0055FF]/10 dark:bg-[#3d7eff]/20 text-[#0055FF] dark:text-[#3d7eff]">
+                <FaPhone className="text-xl" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-1">Phone</h4>
+                <a href="tel:+919028622726" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
+                  +91 9028622726
+                </a>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="mt-1 mr-4 p-3 rounded-full bg-[#0055FF]/10 dark:bg-[#3d7eff]/20 text-[#0055FF] dark:text-[#3d7eff]">
                 <FaEnvelope className="text-xl" />
-              </div>              <div>
+              </div>
+              <div>
                 <h4 className="text-lg font-semibold mb-1">Email</h4>
                 <a href="mailto:mohitchaudhari666@gmail.com" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
                   mohitchaudhari666@gmail.com
@@ -225,14 +239,16 @@ const ContactSection = () => {
             <div className="flex items-start">
               <div className="mt-1 mr-4 p-3 rounded-full bg-[#0055FF]/10 dark:bg-[#3d7eff]/20 text-[#0055FF] dark:text-[#3d7eff]">
                 <FaLinkedin className="text-xl" />
-              </div>              <div>
+              </div>
+              <div>
                 <h4 className="text-lg font-semibold mb-1">LinkedIn</h4>
                 <a href="https://linkedin.com/in/mohit-chaudhari-marketing" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
                   linkedin.com/in/mohit-chaudhari-marketing
                 </a>
               </div>
             </div>
-              <div className="flex items-start">
+            
+            <div className="flex items-start">
               <div className="mt-1 mr-4 p-3 rounded-full bg-[#0055FF]/10 dark:bg-[#3d7eff]/20 text-[#0055FF] dark:text-[#3d7eff]">
                 <FaGithub className="text-xl" />
               </div>
@@ -243,6 +259,14 @@ const ContactSection = () => {
                 </a>
               </div>
             </div>
+          </div>
+          
+          <div className="w-full h-64 relative rounded-xl overflow-hidden">
+            <Lottie 
+              animationData={contactAnimation} 
+              loop={true} 
+              className="w-full h-full"
+            />
           </div>
         </motion.div>
       </div>
