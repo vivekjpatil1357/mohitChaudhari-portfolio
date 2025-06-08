@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mohit Chaudhari - Software Engineer",
-  description: "Software Engineer with expertise in developing innovative solutions for electric vehicles and connected mobility at TVS Motor Company.",
-  keywords: ["software engineer", "web developer", "TVS Motor Company", "electric vehicles", "connected mobility", "portfolio"],
+  title: "Mohit Chaudhari - Marketing Analytics Professional",
+  description: "Marketing Analytics Professional with expertise in data-driven marketing strategies, market research, and digital marketing campaigns at Outlier AI and TVS Motors.",
+  keywords: ["marketing analytics", "digital marketing", "market research", "TVS Motors", "Outlier AI", "data-driven marketing", "MBA", "portfolio"],
   authors: [{ name: "Mohit Chaudhari" }],
   creator: "Mohit Chaudhari",
   themeColor: [

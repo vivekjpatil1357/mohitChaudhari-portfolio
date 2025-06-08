@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import { Button } from './ui/Button';
 import { useState, useRef } from 'react';
+import Lottie from 'lottie-react';
+import contactAnimation from '../public/lottie/contact.json';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -199,14 +201,13 @@ const ContactSection = () => {
         <motion.div variants={itemVariants} className="order-1 md:order-2">
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-gradient inline-block">Contact Information</h3>
           
-          <div className="space-y-6">
-            <div className="flex items-start">
+          <div className="space-y-6">            <div className="flex items-start">
               <div className="mt-1 mr-4 p-3 rounded-full bg-[#0055FF]/10 dark:bg-[#3d7eff]/20 text-[#0055FF] dark:text-[#3d7eff]">
                 <FaMapMarkerAlt className="text-xl" />
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-1">Location</h4>
-                <p className="text-gray-700 dark:text-gray-300">Bangalore, India</p>
+                <p className="text-gray-700 dark:text-gray-300">Pune, Maharashtra, India</p>
               </div>
             </div>
             
@@ -215,8 +216,8 @@ const ContactSection = () => {
                 <FaEnvelope className="text-xl" />
               </div>              <div>
                 <h4 className="text-lg font-semibold mb-1">Email</h4>
-                <a href="mailto:mohit.chaudhari@marketinganalytics.com" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
-                  mohit.chaudhari@marketinganalytics.com
+                <a href="mailto:mohitchaudhari666@gmail.com" className="text-gray-700 dark:text-gray-300 hover:text-[#0055FF] dark:hover:text-[#3d7eff] transition-colors animated-underline">
+                  mohitchaudhari666@gmail.com
                 </a>
               </div>
             </div>
