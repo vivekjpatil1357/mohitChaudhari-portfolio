@@ -7,7 +7,6 @@ import { useRef, useState } from 'react';
 import Lottie from 'lottie-react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import marketAnalysisAnimation from '../public/lottie/market-analysis.json';
-// import TVSMarketingDashboard from './TVSMarketingDashboard';
 import TestDashboard from './TestDashboard';
 interface Project {
   title: string;
@@ -39,7 +38,7 @@ const projectsData: Project[] = [
 
 const ProjectsSection = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const [showTVSDashboard, setShowTVSDashboard] = useState(true); // Keep state name for now
+  const [showTVSDashboard] = useState(true); // Keep state name for now
   
   // We're not using scrollYProgress, so we don't need to destructure it
   useScroll({
@@ -219,11 +218,10 @@ const ProjectsSection = () => {
         <div id="tvs-analytics" className="mt-16">
           <motion.h3 
             className="text-3xl text-center font-bold mb-8"
-            variants={itemVariants}
-          >
+            variants={itemVariants}          >
             TVS Motors Campaign Analytics
           </motion.h3>
-          <TestDashboard /> {/* Re-add this component */}
+          <TestDashboard />
         </div>
       )}
     </motion.div>

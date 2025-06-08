@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ThemeSwitcher = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
     setMounted(true);
     // Check for user's preferred color scheme or saved preference
@@ -21,6 +20,18 @@ const ThemeSwitcher = () => {
       setIsDarkMode(false);
       document.documentElement.classList.remove('dark');
     }
+
+    // Add listener for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem('theme')) {
+        setIsDarkMode(e.matches);
+        document.documentElement.classList.toggle('dark', e.matches);
+      }
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleTheme = () => {

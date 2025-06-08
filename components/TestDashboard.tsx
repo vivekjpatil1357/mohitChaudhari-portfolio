@@ -14,7 +14,6 @@ import {
 } from 'chart.js';
 import { Doughnut, Bar, Line } from 'react-chartjs-2';
 import { motion } from 'framer-motion';
-import { FaArrowRight } from 'react-icons/fa';
 // import Image from 'next/image'; // Assuming Image might be an issue if not used or configured.
 
 // Register ChartJS components
@@ -149,12 +148,11 @@ export default function TestDashboard() {
   const barOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    scales: {
-      y: {
+    scales: {      y: {
         beginAtZero: true,
         max: 100,
         ticks: {
-          callback: function(value: any) {
+          callback: function(value: number | string) {
             return value + '%';
           }
         }
@@ -170,7 +168,7 @@ export default function TestDashboard() {
         display: false
       },      tooltip: {
         callbacks: {
-          label: function(context: any) {
+          label: function(context: { parsed: { y: number }; }) {
             return context.parsed.y + '%';
           }
         }
@@ -190,10 +188,9 @@ export default function TestDashboard() {
           usePointStyle: true,
           pointStyle: 'circle'
         }
-      },
-      tooltip: {
+      },      tooltip: {
         callbacks: {
-          label: function(context: any) {
+          label: function(context: { label?: string; parsed: number }) {
             return context.label + ': ' + context.parsed + '%';
           }
         }
@@ -210,9 +207,8 @@ export default function TestDashboard() {
         beginAtZero: true,
         grid: {
           color: 'rgba(0, 0, 0, 0.05)',
-        },
-        ticks: {
-          callback: function(value: any) {
+        },        ticks: {
+          callback: function(value: number | string) {
             return value + 'k';
           }
         }
@@ -236,9 +232,8 @@ export default function TestDashboard() {
         },
         bodyFont: {
           size: 13,
-        },
-        callbacks: {
-          label: function(context: any) {
+        },        callbacks: {
+          label: function(context: { parsed: { y: number }; }) {
             return context.parsed.y + 'k units';
           }
         }
